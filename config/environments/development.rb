@@ -41,4 +41,6 @@ Rails.application.configure do
 
   # Remove the Rack::Lock middleware (Websocket Rails)
   config.middleware.delete Rack::Lock
+
+  config.log_level = :debug
 end

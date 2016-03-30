@@ -3,7 +3,7 @@ WebsocketRails.setup do |config|
   # Uncomment to override the default log level. The log level can be
   # any of the standard Logger log levels. By default it will mirror the
   # current Rails environment log level.
-  # config.log_level = :debug
+  #config.log_level = :debug
 
   # Uncomment to change the default log file path.
   config.log_path = "#{Rails.root}/log/websocket_rails.log"
@@ -22,13 +22,13 @@ WebsocketRails.setup do |config|
   # * Requires Redis.
   config.synchronize = true
 
-  # Prevent Thin from daemonizing (default is true)
-  # config.daemonize = false
-
   # Uncomment and edit to point to a different redis instance.
   # Will not be used unless standalone or synchronization mode
   # is enabled.
-  # config.redis_options = {:host => 'localhost', :port => '6379'}
+  config.redis_options = {:host => 'localhost', :port => '6379'}
+
+  # Prevent Thin from daemonizing (default is true)
+  # config.daemonize = false
 
   # By default, all subscribers in to a channel will be removed
   # when that channel is made private. If you don't wish active
@@ -41,7 +41,7 @@ WebsocketRails.setup do |config|
   # notified when other clients join and part the channel. If you are
   # using the UserManager, the current_user object will be sent along
   # with the event.
-  # config.broadcast_subscriber_events = true
+  config.broadcast_subscriber_events = true
 
   # Used as the key for the WebsocketRails.users Hash. This method
   # will be called on the `current_user` object in your controller
